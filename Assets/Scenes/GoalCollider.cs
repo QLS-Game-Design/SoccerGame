@@ -15,6 +15,8 @@ public class GoalCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "BALL"){
             Debug.Log("SCORE");
+            ball.transform.position = Vector3.zero;
+            ball.transform.rotation = Quaternion.identity;
         }
 
     }

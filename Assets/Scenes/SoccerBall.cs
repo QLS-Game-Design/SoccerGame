@@ -7,13 +7,22 @@ public class SoccerBall : MonoBehaviour
     public float speed = 5f;
     
  
- void OnTriggerEnter (Collider col)
+ private void OnCollisionEnter (Collision other)
      {
-     if(col.tag == "Player")
+     if(other.gameObject.tag == "Player1")
          {
          GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.forward) * speed );
          Debug.Log("Ball Kicked");
          }
+         if(other.gameObject.tag == "Player2")
+         {
+         GetComponent<Rigidbody>().AddForce(transform.TransformDirection(-Vector3.forward) * speed );
+         Debug.Log("Ball Kicked");
+         }
+         
+            
+         }
      }
-}
+
+
 
