@@ -15,10 +15,14 @@ public class PlayerMovement2 : MonoBehaviour
         
     }
     private void OnCollisionEnter(Collision other) {
-        canJump = true;
+        if(other.gameObject.tag == "FLOOR"){
+            canJump = true;
+        }
     }
     private void OnCollisionExit(Collision other) {
-        canJump = false;
+        if(other.gameObject.tag == "FLOOR"){
+            canJump = false;
+        }
     }
     // Update is called once per frame
     void Update()

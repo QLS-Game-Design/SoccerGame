@@ -15,15 +15,19 @@ public class PlayerMovement : MonoBehaviour
         
     }
     private void OnCollisionEnter(Collision other) {
-        canJump = true;
+        if(other.gameObject.tag == "FLOOR"){
+            canJump = true;
+        }
     }
     private void OnCollisionExit(Collision other) {
-        canJump = false;
+         if(other.gameObject.tag == "FLOOR"){
+            canJump = false;
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        if ( canJump && Input.GetKey(KeyCode.Space))
+        if ((canJump && Input.GetKey(KeyCode.Space)))
         {
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jump_height);
         }
