@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * Time.deltaTime * speed);
         }
        
-        
+
     }
     
 }
