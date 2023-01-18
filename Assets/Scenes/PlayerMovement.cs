@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jump_height);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && transform.position.x < 1)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
