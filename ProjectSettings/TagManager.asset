@@ -9,6 +9,7 @@ TagManager:
   - FLOOR
   - Player1
   - Player2
+  - ScoreCounter
   layers:
   - Default
   - TransparentFX
