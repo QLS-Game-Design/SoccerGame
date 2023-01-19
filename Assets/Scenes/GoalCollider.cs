@@ -38,6 +38,8 @@ public class GoalCollider : MonoBehaviour
             player2.transform.position = player2Start;
             // player2.transform.position = new Vector3(0.501464844f,0.430000305f,8.35370636f);
             player2.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            
+            
 
         }
 
