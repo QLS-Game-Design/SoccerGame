@@ -10,13 +10,16 @@ public class AddForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    }
 
     // Update is called once per frame
     void Update()
     {
-    Ball.GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.forward * speed));
+    
 
     }
+    private void OnCollisionEnter(Collision other) {
+        
+        Ball.GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector2.right * speed));
     }
 }

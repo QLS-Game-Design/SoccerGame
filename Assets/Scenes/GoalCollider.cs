@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class GoalCollider : MonoBehaviour
 {
     public GameObject ball;
     public GameObject player1;
     public GameObject player2;
+    public TextMeshProUGUI TextPro;
+    public int count = 0;
 
     private Vector3 player1Start;
     private Vector3 player2Start;
@@ -26,6 +30,10 @@ public class GoalCollider : MonoBehaviour
             Debug.Log("SCORE");
             ball.transform.position = ballStart;
             // ball.transform.position = Vector3.left;
+            count = count+1;
+
+            TextPro.text = count.ToString();
+            
             ball.transform.rotation = Quaternion.identity;
             ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             
